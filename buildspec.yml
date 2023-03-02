@@ -10,4 +10,4 @@ phases:
   post_build:
     commands:
       - aws s3 cp --recursive ./build s3://codepipeline-us-east-1-313766823644/my-app-deployment/
-      - aws cloudfront create-invalication --distribution-id 313766823644 --path /\*
+      - aws cloudfront create-invalication --distribution-id E3KB3BP114ZSOK --path /\*
