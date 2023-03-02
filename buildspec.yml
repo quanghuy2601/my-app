@@ -9,5 +9,5 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 cp --recursive ./build s3://https://codepipeline-us-east-1-313766823644.s3.amazonaws.com/my-app-deployment/
+      - aws s3 cp --recursive ./build s3://codepipeline-us-east-1-313766823644.s3.amazonaws.com/my-app-deployment/
       - aws cloudfront create-invalication --distribution-id E3KB3BP114ZSOK --path /\*
