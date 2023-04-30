@@ -36,7 +36,7 @@ jobs:
       - run:
           command: |
             echo "Digest is: $(</tmp/digest.txt)"
-            ssh -oStrictHostKeyChecking=no -v $root@$192.168.205.128 "./deploy.sh"
+      - run: ssh -oStrictHostKeyChecking=no -v $root@$192.168.205.128 "./deploy.sh"
 
 workflows:
   my-pipeline:
