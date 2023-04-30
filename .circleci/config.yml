@@ -36,7 +36,10 @@ jobs:
       - run:
           command: |
             echo "Digest is: $(</tmp/digest.txt)"
-      - add-ssh-keys:
+  deploy:
+    executor: docker/docker
+    steps:
+      - add_ssh_keys:
           fingerprint:
             - "ca:2b:88:7e:c2:4d:91:52:fb:d7:bb:0b:c3:84:8e:4e"
       - run: ssh -oStrictHostKeyChecking=no -v ubuntu@$ec2-3-106-59-134.ap-southeast-2.compute.amazonaws.com "./deploy.sh"
