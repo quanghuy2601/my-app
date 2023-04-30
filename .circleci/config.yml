@@ -42,7 +42,7 @@ jobs:
       - add_ssh_keys:
           fingerprint:
             - "ca:2b:88:7e:c2:4d:91:52:fb:d7:bb:0b:c3:84:8e:4e"
-      - run: ssh -oStrictHostKeyChecking=no -v ubuntu@$ec2-3-106-59-134.ap-southeast-2.compute.amazonaws.com "./deploy.sh"
+      - run: ssh -oStrictHostKeyChecking=no -v $DEPLOYED_USER@$DEPLOYED_SERVER "./deploy.sh"
 
 workflows:
   my-pipeline:
@@ -55,4 +55,6 @@ workflows:
             branches:
               only:
                 - main
-      - deploy
+      - deploy:
+          requires:
+            - build-and-push
