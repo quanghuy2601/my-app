@@ -41,7 +41,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprint:
-            - "8e:1b:73:6c:f8:95:67:f3:a8:fd:a7:ff:00:5c:19:b0"
+            - "c9:57:7a:84:f7:09:39:6e:f6:d3:89:0b:a3:40:ba:00"
       - run: ssh -oStrictHostKeyChecking=no -v $DEPLOYED_USER@$DEPLOYED_SERVER "./deploy.sh"
 
 workflows:
