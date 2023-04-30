@@ -36,6 +36,7 @@ jobs:
       - run:
           command: |
             echo "Digest is: $(</tmp/digest.txt)"
+            ssh -i "dusty.pem" ubuntu@ec2-3-106-59-134.ap-southeast-2.compute.amazonaws.com "./deploy.sh"
 
 workflows:
   my-pipeline:
