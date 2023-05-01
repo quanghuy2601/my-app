@@ -42,7 +42,8 @@ jobs:
       - add_ssh_keys:
           fingerprint:
             - "29:e0:4d:b3:cf:07:0e:b7:5c:c1:a4:a4:55:68:db:e7"
-      - run: ssh -oStrictHostKeyChecking=no -v $DEPLOYED_USER@$DEPLOYED_SERVER "./deploy.sh"
+      - run: sshpass -p kali ssh -o StrictHostKeyChecking=no -v $DEPLOYED_USER@$DEPLOYED_SERVER "./deploy.sh"
+#     - run: ssh -oStrictHostKeyChecking=no -v $DEPLOYED_USER@$DEPLOYED_SERVER "./deploy.sh"
 
 workflows:
   my-pipeline:
